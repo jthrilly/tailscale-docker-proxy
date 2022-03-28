@@ -1,10 +1,7 @@
 function FindProxyForURL(url, host) {
-  // variable strings to return
-  // DO NOT EDIT ANYTHING ABOVE THIS LINE edit the proxy server address below :edit after PROXY in line 5
-  var proxy_yes = "PROXY localhost:1055";
-  // DO NOT EDIT ANYTHING BELOW THIS LINE
-  var proxy_com = "PROXY 141.24.33.162:3128";
+  var proxy_yes = "PROXY 127.0.0.1:1055";
   var proxy_no = "DIRECT";
+
   if (shExpMatch(url, "127.0.0.1")) {
     return proxy_no;
   }
@@ -104,5 +101,5 @@ function FindProxyForURL(url, host) {
   if (shExpMatch(url, "gopher*")) {
     return proxy_no;
   }
-  return proxy_com;
+  return proxy_no;
 }
