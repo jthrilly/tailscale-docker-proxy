@@ -1,5 +1,5 @@
 function FindProxyForURL(url, host) {
-  var proxy_yes = "PROXY 127.0.0.1:1055";
+  var proxy_yes = "SOCKS5 127.0.0.1:1055";
   var proxy_no = "DIRECT";
 
   if (shExpMatch(url, "127.0.0.1")) {
