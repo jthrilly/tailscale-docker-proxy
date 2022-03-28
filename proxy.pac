@@ -1,11 +1,8 @@
 function FindProxyForURL(url, host) {
-  var proxy_yes = "SOCKS5 127.0.0.1:1055";
+  var proxy_yes = "SOCKS localhost:1055";
   var proxy_no = "DIRECT";
 
   if (shExpMatch(url, "127.0.0.1")) {
-    return proxy_no;
-  }
-  if (shExpMatch(url, "http://news.bbc.*")) {
     return proxy_no;
   }
   if (shExpMatch(url, "*.bbc.co.uk")) {
@@ -85,21 +82,6 @@ function FindProxyForURL(url, host) {
   }
   if (shExpMatch(url, "*itvplayer*")) {
     return proxy_yes;
-  }
-  if (shExpMatch(url, "*www.*")) {
-    return proxy_no;
-  }
-  if (shExpMatch(url, "*.*")) {
-    return proxy_no;
-  }
-  if (shExpMatch(url, "https://*")) {
-    return proxy_no;
-  }
-  if (shExpMatch(url, "ftp://*")) {
-    return proxy_no;
-  }
-  if (shExpMatch(url, "gopher*")) {
-    return proxy_no;
   }
   return proxy_no;
 }
