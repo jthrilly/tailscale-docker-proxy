@@ -5,6 +5,23 @@ function FindProxyForURL(url, host) {
   if (shExpMatch(url, "127.0.0.1")) {
     return proxy_no;
   }
+
+  if (shExpMatch(url, "*.bbc.co.uk/mediaselector*")) {
+    return proxy_yes;
+  }
+  
+  if (shExpMatch(url, "zaphod-live.bbc.co.uk.edgesuite.net/*")) {
+    return proxy_yes;
+  }
+
+  if (shExpMatch(url, "*.edgesuite.net/*")) {
+    return proxy_yes;
+  }
+  
+  if (shExpMatch(url, "bbcfmhds.vo.llnwd.net/*")) {
+    return proxy_yes;
+  }
+  
   if (shExpMatch(url, "*.bbc.co.uk")) {
     return proxy_yes;
   }
