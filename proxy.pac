@@ -88,16 +88,16 @@ function FindProxyForURL(url, host) {
   if (shExpMatch(url, "*.sageanalyst.*")) {
     return proxy_yes;
   }
-  if (shExpMatch(url, "http://www.itv.com/itvplayer/")) {
+  if (shExpMatch(url, "http://www.itv.com/*")) {
     return proxy_yes;
   }
-  if (shExpMatch(url, "http://www.itv.com/itvplayer/*")) {
+  if (shExpMatch(url, "http://www.itv.com/hub/*")) {
     return proxy_yes;
   }
-  if (shExpMatch(url, "*/itvplayer/")) {
+  if (shExpMatch(url, "*/hub/")) {
     return proxy_yes;
   }
-  if (shExpMatch(url, "*itvplayer*")) {
+  if (shExpMatch(url, "*hub/itv*")) {
     return proxy_yes;
   }
   return proxy_no;
